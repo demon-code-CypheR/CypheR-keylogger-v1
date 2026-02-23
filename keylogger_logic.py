@@ -22,7 +22,7 @@ fernet = Fernet(key)
 # Function to check kill-switch
 def check_kill_switch():
     try:
-        r = requests.get("https://gist.githubusercontent.com/RMXHM/fddec5ef289865581eba6c38b8800246/raw/d1ebea9f92bb3fc5577f7a0e60863f2c2191882d/kill_switch.txt", timeout=5)
+        r = requests.get("https://your-api-or-gist-url.com/kill_switch.txt", timeout=5)
         if r.text.strip().lower() == "stop":
             return True
     except:
@@ -154,3 +154,4 @@ if __name__ == "__main__":
     except Exception as e:
         with open("error.log", "a") as f:
             f.write(f"Error: {e}\n")
+
